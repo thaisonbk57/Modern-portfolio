@@ -1,6 +1,26 @@
 * {
   box-sizing: border-box; }
 
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all .3s ease-out; }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background-color: #fff;
+    transition: all .3s ease-out; }
+  .menu-btn.close .btn-line:nth-child(2) {
+    opacity: 0; }
+  .menu-btn.close .btn-line:first-child {
+    transform: rotateZ(135deg) translate(5px, -6px); }
+  .menu-btn.close .btn-line:last-child {
+    transform: rotateZ(-135deg) translate(5px, 6px); }
+
 body {
   background-color: #535c68;
   color: #fff;
@@ -58,7 +78,7 @@ main {
     margin-top: 1rem; }
     main .icons a {
       padding: .4rem;
-      transition: all .5s ease-out; }
+      transition: all .3s ease-out; }
       main .icons a:hover {
         color: #eece1a; }
   main#home {
