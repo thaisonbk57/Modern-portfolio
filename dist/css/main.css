@@ -1,4 +1,5 @@
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 .menu-btn {
@@ -7,18 +8,22 @@
   right: 35px;
   top: 35px;
   cursor: pointer;
+  -webkit-transition: all .4s ease-out;
   transition: all .4s ease-out; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
     background-color: #fff;
+    -webkit-transition: all .4s ease-out;
     transition: all .4s ease-out; }
   .menu-btn.close .btn-line:nth-child(2) {
     opacity: 0; }
   .menu-btn.close .btn-line:first-child {
+    -webkit-transform: rotateZ(135deg) translate(5px, -6px);
     transform: rotateZ(135deg) translate(5px, -6px); }
   .menu-btn.close .btn-line:last-child {
+    -webkit-transform: rotateZ(-135deg) translate(5px, 6px);
     transform: rotateZ(-135deg) translate(5px, 6px); }
 
 .menu {
@@ -30,9 +35,18 @@
   .menu.show {
     visibility: visible; }
   .menu-branding, .menu-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column wrap;
     flex-flow: column wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     float: left;
     width: 50%;
@@ -43,15 +57,21 @@
     padding: 0;
     background: #484f5a;
     list-style: none;
+    -webkit-transform: translate(0, -100%);
     transform: translate(0, -100%);
+    -webkit-transition: all .4s ease-out;
     transition: all .4s ease-out; }
     .menu-nav.show {
+      -webkit-transform: translate(0, 0);
       transform: translate(0, 0); }
   .menu-branding {
     background: #535c68;
+    -webkit-transition: all .4s ease-out;
     transition: all .4s ease-out;
+    -webkit-transform: translate(0, 100%);
     transform: translate(0, 100%); }
     .menu-branding.show {
+      -webkit-transform: translate(0, 0);
       transform: translate(0, 0); }
     .menu-branding .portrait {
       width: 250px;
@@ -60,9 +80,12 @@
       border-radius: 50%;
       border: solid 3px #eece1a; }
   .menu .nav-item {
+    -webkit-transform: translate(600px, 0);
     transform: translate(600px, 0);
+    -webkit-transition: all .4s ease-out;
     transition: all .4s ease-out; }
     .menu .nav-item.show {
+      -webkit-transform: translate(0, 0);
       transform: translate(0, 0); }
     .menu .nav-item.current > a {
       color: #eece1a; }
@@ -75,21 +98,62 @@
     font-weight: 300;
     color: #fff;
     text-decoration: none;
+    -webkit-transition: all .4s ease-out;
     transition: all .4s ease-out; }
     .menu .nav-link:hover {
       color: #eece1a; }
 
 .nav-item:nth-child(1) {
+  -webkit-transition-delay: 0.1s;
   transition-delay: 0.1s; }
 
 .nav-item:nth-child(2) {
+  -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s; }
 
 .nav-item:nth-child(3) {
+  -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s; }
 
 .nav-item:nth-child(4) {
+  -webkit-transition-delay: 0.4s;
   transition-delay: 0.4s; }
+
+@media screen and (max-width: 768px) {
+  main {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0); }
+  .menu-nav {
+    height: 75vh;
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+    font-size: 24px; }
+  .menu-branding {
+    height: 25vh;
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0); }
+    .menu-branding .portrait {
+      background: url("../img/portrait_small.jpg");
+      width: 150px;
+      height: 150px; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }
 
 body {
   background-color: #535c68;
@@ -148,6 +212,7 @@ main {
     margin-top: 1rem; }
     main .icons a {
       padding: .4rem;
+      -webkit-transition: all .4s ease-out;
       transition: all .4s ease-out; }
       main .icons a:hover {
         color: #eece1a; }
